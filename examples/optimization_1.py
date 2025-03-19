@@ -227,7 +227,7 @@ for risk_aversion in risk_aversion_grid:
 
     # Define the problem
     problem = qpsolvers.Problem(
-        P = (covmat * risk_aversion).to_numpy(),
+        P = (covmat * risk_aversion).to_numpy(), # risk aversion is just scaling the covariance matrix
         q = mu.to_numpy() * -1,  # don't forget to multiply by -1 since we are minimizing
         G = G,
         h = h,
