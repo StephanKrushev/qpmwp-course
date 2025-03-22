@@ -25,13 +25,13 @@ import scipy.sparse as spa
 ALL_SOLVERS = {'clarabel', 'cvxopt', 'daqp', 'ecos', 'gurobi', 'highs', 'mosek', 'osqp', 'piqp', 'proxqp', 'qpalm', 'quadprog', 'scs'}
 SPARSE_SOLVERS = {'clarabel', 'ecos', 'gurobi', 'mosek', 'highs', 'qpalm', 'osqp', 'qpswift', 'scs'}
 IGNORED_SOLVERS = {
-    'gurobi',  # Commercial solver
-    'mosek',  # Commercial solver
+#   'gurobi',  # Commercial solver
+#    'mosek',  # Commercial solver
     'ecos',
     'scs',
     'piqp',
     'proxqp',
-    'clarabel'
+    'clarabel',
 }
 USABLE_SOLVERS = ALL_SOLVERS - IGNORED_SOLVERS
 

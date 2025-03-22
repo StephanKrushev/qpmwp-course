@@ -32,33 +32,33 @@ import pandas as pd
 
 
 
-class ExpectedReturnSpecification(dict):
+class ExpectedReturnSpecification(dict): # inherit from dict class
 
     def __init__(self,
-                 method='geometric',
+                 method='geometric', #default method
                  scalefactor=1,
                  **kwargs):
         super().__init__(
             method=method,
             scalefactor=scalefactor,
         )
-        self.update(kwargs)
+        self.update(kwargs) #dictionary method to add the kwargs to the dictionary object created by the super().__init__ method
 
 
 class ExpectedReturn:
 
     def __init__(self,
-                 spec: Optional[ExpectedReturnSpecification] = None,
+                 spec: Optional[ExpectedReturnSpecification] = None, #Optional type hint from typing module to allow None type
                  **kwargs):
         self.spec = ExpectedReturnSpecification() if spec is None else spec
         self.spec.update(kwargs)
-        self._vector: Union[pd.Series, np.ndarray, None] = None
+        self._vector: Union[pd.Series, np.ndarray, None] = None # Union type hint from typing module to allow multiple types
 
-    @property
+    @property # property decorator to define a getter method for the spec attribute. property() is a built-in function that creates and returns a property object
     def spec(self):
-        return self._spec
-
-    @spec.setter
+        return self._spec # property function to return the value of the _spec attribute as the value of the spec attribute
+# this hides spec as _spec and makes it read-only
+    @spec.setter # property decorator to define a setter method for the spec attribute, setter() is a built-in function that creates and returns a setter object
     def spec(self, value):
         if isinstance(value, ExpectedReturnSpecification):
             self._spec = value

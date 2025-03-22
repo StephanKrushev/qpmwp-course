@@ -23,9 +23,9 @@ import pandas as pd
 
 class Constraints:
 
-    def __init__(self, ids: list[str] = ['NA']):
+    def __init__(self, ids: list[str] = ['NA']): #ids are the names of the assets e.g. symbols ['AAPL', 'MSFT', 'GOOGL']
         self.ids = ids
-        self.budget = {'Amat': None, 'sense': None, 'rhs': None}
+        self.budget = {'Amat': None, 'sense': None, 'rhs': None} # A-matrix
         self.box = {'box_type': 'NA', 'lower': None, 'upper': None}
         self.linear = {'G': None, 'sense': None, 'rhs': None}
         self.l1 = {}

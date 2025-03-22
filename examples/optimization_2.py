@@ -48,10 +48,11 @@ from optimization.optimization import MeanVariance
 # --------------------------------------------------------------------------
 # Load data
 # --------------------------------------------------------------------------
-
+print(os.getcwd())
 N = 10
-data = load_data_msci(path = '../data/', n = N)
+data = load_data_msci(path = 'qpmwp-course/data/', n = N)
 data
+
 
 
 
